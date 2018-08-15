@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+    echo "こんにちわ";
+?>
+/*require_once __DIR__ . '/vendor/autoload.php';
 
 error_log("start");
 
@@ -35,4 +37,4 @@ $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply
 // メッセージ送信
 $response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
 error_log(var_export($response,true));
-return;
+return;*/
