@@ -270,15 +270,11 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "add":{
-                  log.info("Returns echo message {}: {}", replyToken, "データを追加");
-                this.replyText(
-                        replyToken,
-                        "データを追加"
-                );
+
+            case "add": {
+                    this.replyText(replyToken, "データの追加");
+                
                 break;
-               // this.reply(replyToken,"add");
-               //break;
             }
             case "bye": {
                 Source source = event.getSource();
