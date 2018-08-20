@@ -271,8 +271,8 @@ public class KitchenSinkController {
                 break;
             }
             case "add":{
-                TemplateMessage templateMessage = new TemplateMessage("データを追加します", confirmTemplate);
-                this.reply(replyToken,templateMessage);
+                
+                this.reply(replyToken,"add");
                 break;
             }
             case "bye": {
