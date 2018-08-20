@@ -271,9 +271,14 @@ public class KitchenSinkController {
                 break;
             }
             case "add":{
-                
-                this.reply(replyToken,"add");
+                  log.info("Returns echo message {}: {}", replyToken, "データを追加");
+                this.replyText(
+                        replyToken,
+                        "データを追加"
+                );
                 break;
+               // this.reply(replyToken,"add");
+               //break;
             }
             case "bye": {
                 Source source = event.getSource();
