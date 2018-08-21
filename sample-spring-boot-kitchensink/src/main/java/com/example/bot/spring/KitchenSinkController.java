@@ -270,6 +270,9 @@ public class KitchenSinkController {
                 }
                 break;
             }
+            case "add":{
+                break;
+            }
             case "bye": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
