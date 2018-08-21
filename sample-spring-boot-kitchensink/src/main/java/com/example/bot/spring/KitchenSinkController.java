@@ -271,11 +271,7 @@ public class KitchenSinkController {
                 break;
             }
 
-            case "add": {
-                    this.replyText(replyToken, "データの追加");
-                
-                break;
-            }
+           
             case "bye": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
