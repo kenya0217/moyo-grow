@@ -270,7 +270,7 @@ public class KitchenSinkController {
                 }
                 break;
             }
-            case "add":{
+            case "add": {
                 break;
             }
             case "bye": {
