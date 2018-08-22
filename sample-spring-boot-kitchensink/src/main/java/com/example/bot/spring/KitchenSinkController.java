@@ -272,8 +272,11 @@ public class KitchenSinkController {
                 break;
             }
             case "add": {
+<<<<<<< HEAD
                 this.replyText(replyToken, "データを追加しました");
                 
+=======
+>>>>>>> parent of db781aa... add massage
                 break;
             }
             case "bye": {
