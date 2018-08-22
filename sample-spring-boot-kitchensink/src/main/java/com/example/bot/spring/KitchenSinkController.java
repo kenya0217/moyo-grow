@@ -302,7 +302,7 @@ public class KitchenSinkController {
                 break;
             }
             case "count": {
-                this.replyText(replyToken,"s");
+                this.replyText(replyToken,"s"+callcount);
                 break;
             }
             case "buttons": {
