@@ -302,8 +302,7 @@ public class KitchenSinkController {
                 break;
             }
             case "count": {
-                callcountstring = String.valueOf(callcount);
-                this.replyText(replyToken,callcountString);
+                this.replyText(replyToken,"s");
                 break;
             }
             case "buttons": {
