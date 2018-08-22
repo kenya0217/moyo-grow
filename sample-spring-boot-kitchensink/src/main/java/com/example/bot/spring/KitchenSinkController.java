@@ -87,7 +87,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @LineMessageHandler
 public class KitchenSinkController {
-    int callcount = 0;
+    int callcount;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -244,9 +244,6 @@ public class KitchenSinkController {
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String text = content.getText();
-        callcount++;
-
-        
 
         log.info("Got text message from {}: {}", replyToken, text);
         switch (text) {
