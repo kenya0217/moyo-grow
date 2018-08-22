@@ -87,7 +87,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @LineMessageHandler
 public class KitchenSinkController {
-    int callcount;
+    int callcount = 0;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -244,7 +244,7 @@ public class KitchenSinkController {
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String text = content.getText();
-
+        callcount++;
         log.info("Got text message from {}: {}", replyToken, text);
         switch (text) {
             case "profile": {
@@ -298,6 +298,10 @@ public class KitchenSinkController {
                 } else {
                     this.replyText(replyToken, "Bot can't leave from 1:1 chat");
                 }
+                break;
+            }
+            case "count": {
+                replyMessage(replyToken,"count");
                 break;
             }
             case "buttons": {
