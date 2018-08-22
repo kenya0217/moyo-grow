@@ -95,6 +95,7 @@ public class KitchenSinkController {
 
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
+        handleTextContent(event.getReplyToken(), event, message);
     }
 
     @EventMapping
@@ -273,7 +274,7 @@ public class KitchenSinkController {
             }
             case "add": {
                 this.replyText(replyToken, "データを追加しました");
-                handleTextContent(event.getReplyToken(), event, message);
+                
                 break;
             }
             case "bye": {
