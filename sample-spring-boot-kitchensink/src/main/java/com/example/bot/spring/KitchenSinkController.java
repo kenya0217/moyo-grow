@@ -245,7 +245,9 @@ public class KitchenSinkController {
         String text = content.getText();
         int callcount;
 
-        callcount++;
+        callcount=callcount++;
+
+        
 
         log.info("Got text message from {}: {}", replyToken, text);
         switch (text) {
@@ -292,6 +294,7 @@ public class KitchenSinkController {
                 }
                 break;
             }
+            
             case "buttons": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
