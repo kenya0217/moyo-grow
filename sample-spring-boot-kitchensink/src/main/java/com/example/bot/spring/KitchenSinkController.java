@@ -272,6 +272,7 @@ public class KitchenSinkController {
             }
             case "add": {
                 this.replyText(replyToken, "データを追加しました");
+                this.replyText(replyToken, "データをファイhwあ");
                 break;
             }
             case "bye": {
