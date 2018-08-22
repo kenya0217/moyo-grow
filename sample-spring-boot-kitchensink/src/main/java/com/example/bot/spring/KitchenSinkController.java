@@ -87,7 +87,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @LineMessageHandler
 public class KitchenSinkController {
-    int callcount = 0;
+    int callcount;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
