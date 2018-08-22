@@ -243,6 +243,9 @@ public class KitchenSinkController {
     private void handleTextContent(String replyToken, Event event, TextMessageContent content)
             throws Exception {
         String text = content.getText();
+        int callcount;
+
+        callcount++;
 
         log.info("Got text message from {}: {}", replyToken, text);
         switch (text) {
@@ -272,6 +275,7 @@ public class KitchenSinkController {
                 break;
             }
             case "add": {
+                //一回のメッセージで2回返答する
                 this.reply(replyToken, Arrays.asList(new TextMessage("a"), new TextMessage("i")));
                 break;
             }
@@ -286,16 +290,6 @@ public class KitchenSinkController {
                 } else {
                     this.replyText(replyToken, "Bot can't leave from 1:1 chat");
                 }
-                break;
-            }
-            case "confirm": {
-                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
-                        "Do it?",
-                        new MessageAction("Yes", "Yes!"),
-                        new MessageAction("No", "No!")
-                );
-                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
-                this.reply(replyToken, templateMessage);
                 break;
             }
             case "buttons": {
