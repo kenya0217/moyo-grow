@@ -95,7 +95,6 @@ public class KitchenSinkController {
 
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
-        handleTextContent(event.getReplyToken(), event, message);
     }
 
     @EventMapping
