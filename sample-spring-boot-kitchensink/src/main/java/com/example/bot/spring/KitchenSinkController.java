@@ -88,6 +88,7 @@ import lombok.extern.slf4j.Slf4j;
 @LineMessageHandler
 public class KitchenSinkController {
     int callcount;
+    String callcountstring;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -301,7 +302,8 @@ public class KitchenSinkController {
                 break;
             }
             case "count": {
-                this.replyText(replyToken,callcount);
+                callcountstring = String.valueOf(callcount);
+                this.replyText(replyToken,callcountString);
                 break;
             }
             case "buttons": {
