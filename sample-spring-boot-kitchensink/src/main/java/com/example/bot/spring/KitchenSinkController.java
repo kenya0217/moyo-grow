@@ -277,6 +277,16 @@ public class KitchenSinkController {
                 this.reply(replyToken, Arrays.asList(new TextMessage("a"), new TextMessage("i")));
                 break;
             }
+                case "confirm": {
+                ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                        "Do it?",
+                        new MessageAction("Yes", "Yes!"),
+                        new MessageAction("No", "No!")
+                );
+                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+                this.reply(replyToken, templateMessage);
+                break;
+            }
             case "bye": {
                 Source source = event.getSource();
                 if (source instanceof GroupSource) {
