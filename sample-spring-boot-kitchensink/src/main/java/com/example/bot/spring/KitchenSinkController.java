@@ -301,7 +301,7 @@ public class KitchenSinkController {
                 break;
             }
             case "count": {
-                this.replyText(replyToken,"count");
+                this.replyText(replyToken,(String)callcount);
                 break;
             }
             case "buttons": {
