@@ -251,6 +251,7 @@ public class KitchenSinkController {
         log.info("Got text message from {}: {}", replyToken, text);
         if (!first) {
             this.replyText(replyToken, "a");
+            first = true;
             return;
         }
         switch (text) {
