@@ -272,17 +272,18 @@ public class KitchenSinkController {
                 break;
                 }
                 case 2: {
-                    if (text.equals("そうだよ")) {
-                        this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
-                     new TextMessage("いい名前ですね😍")));
-                     tempo++;
-                     return;
-                     }
-                    else {
-                        this.replyText(replyToken, "違うんだ...もう一回聞きます！");
-                        tempo--;
-                        return;
+                    switch (text) {
+                        case "そうだよ": {
+                            this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
+                            new TextMessage("いい名前ですね😍")));
+                            tempo++;
                         }
+                        case "違う": {
+                            this.replyText(replyToken, "違うんだ...もう一回聞きます！");
+                            tempo--;
+                            return;
+                        }
+                    }
                 }
                 /*case 3: {
                     this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
