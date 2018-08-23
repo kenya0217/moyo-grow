@@ -280,7 +280,7 @@ public class KitchenSinkController {
                             return;
                         }
                         case "ちがう": {
-                            this.replyText(replyToken, "違うんだ...もう一回聞きます！");
+                            this.replyText(replyToken, "違うんだ...もう一回教えてください！");
                             tempo--;
                             return;
                         }
@@ -338,6 +338,10 @@ public class KitchenSinkController {
             }
         }
         switch (text) {
+            case "reset": {
+                tempo = 0;
+                first = false;
+            }
             case "profile": {
                 String userId = event.getSource().getUserId();
                 if (userId != null) {
