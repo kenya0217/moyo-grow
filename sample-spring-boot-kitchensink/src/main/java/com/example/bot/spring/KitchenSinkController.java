@@ -251,6 +251,12 @@ public class KitchenSinkController {
         String text = content.getText();
         callcount++;
         log.info("G", replyToken, text);
+        switch (text) {
+            case "reset" : {
+                tempo = 0;
+                first = false;
+            }
+        }
         if (!first) {
             switch (tempo) {
                 case 0: {
@@ -284,6 +290,11 @@ public class KitchenSinkController {
                             tempo--;
                             return;
                         }
+                        default : {
+                            this.replyText(replyToken, "ちゃんと答えてください！");
+                            tempo--;
+                            return;
+                        }
                     }
                 }
                 /*case 3: {
@@ -304,12 +315,6 @@ public class KitchenSinkController {
                 break;
                 }
                 case 5: {
-                    if (text.equals("丁寧語でいいよ")) {
-                        this.reply(replyToken, Arrays.asList(new TextMessage("わかりました..."),
-                     new TextMessage("丁寧語で話します")));
-                     tempo++;
-                     return;
-                    }
                 }*/
             }
         }
