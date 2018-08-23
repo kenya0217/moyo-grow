@@ -266,7 +266,7 @@ public class KitchenSinkController {
                         new MessageAction("違うわ", "No")
                 );
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
-                if (TemplateMessage.equals(Yes)) {
+                if (TemplateMessage.equals("Yes")) {
                     this.reply(replyToken, Arrays.asList(new TextMessage("あなたの名前は" + name + "ですね!"),
                      new TextMessage("いい名前だね" + 0x100078)));
                     tempo++;
