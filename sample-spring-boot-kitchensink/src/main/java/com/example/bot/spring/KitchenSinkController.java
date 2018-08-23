@@ -248,9 +248,7 @@ public class KitchenSinkController {
         String text = content.getText();
         callcount++;
         log.info("Got text message from {}: {}", replyToken, text);
-        if(first){
-
-        
+        if (first) {
         switch (text) {
             case "profile": {
                 String userId = event.getSource().getUserId();
@@ -449,7 +447,7 @@ public class KitchenSinkController {
                 break;
         }
         }
-        else{
+        else {
 
 
 
