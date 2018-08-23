@@ -342,7 +342,9 @@ public class KitchenSinkController {
                     }
                 }
                 case 7: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！"),StickerMessage(getPackageId(1),getStickerId(1))));
+                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！"),
+                    StickerMessage(getPackageId(1),getStickerId(1))));
+                    callcount = 0 ;
                     return;
                 }
             }
@@ -353,6 +355,11 @@ public class KitchenSinkController {
                 first = false;
                 this.replyText(replyToken, "リセットします");
                 return;
+            }
+             case "add": {
+                //一回のメッセージで2回返答する
+                this.reply(replyToken, Arrays.asList(new TextMessage("a"), new TextMessage("i")));
+                break;
             }
             case "profile": {
                 String userId = event.getSource().getUserId();
@@ -377,11 +384,6 @@ public class KitchenSinkController {
                 } else {
                     this.replyText(replyToken, "Bot can't use profile API without user ID");
                 }
-                break;
-            }
-            case "add": {
-                //一回のメッセージで2回返答する
-                this.reply(replyToken, Arrays.asList(new TextMessage("a"), new TextMessage("i")));
                 break;
             }
                 case "confirm": {
