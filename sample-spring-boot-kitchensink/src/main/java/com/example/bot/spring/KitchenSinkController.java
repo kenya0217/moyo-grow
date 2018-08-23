@@ -263,7 +263,7 @@ public class KitchenSinkController {
                     name = text;
                     ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "あなたの名前は" + name + "ですか？",
-                        new MessageAction("はい", "そうだよ！"),
+                        new MessageAction("はい", "そうだよ"),
                         new MessageAction("いいえ", "違う")
                 );
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
@@ -272,18 +272,43 @@ public class KitchenSinkController {
                 break;
                 }
                 case 2: {
-                    if (text.equals("そうだよ！")) {
+                    if (text.equals("そうだよ")) {
                         this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
                      new TextMessage("いい名前ですね😍")));
                      tempo++;
                      return;
-                    }
+                     }
                     else {
                         this.replyText(replyToken, "違うんだ...もう一回聞きます！");
                         tempo--;
                         return;
-                    }
+                        }
                 }
+                /*case 3: {
+                    this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
+                     new TextMessage("一つ質問させてもらいます")));
+                    tempo++;
+                    return;
+                }
+                case 4: {
+                    ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                        "これからは丁寧語と話し言葉どっちで会話すればいいですか？",
+                        new MessageAction("丁寧語", "丁寧語でいいよ"),
+                        new MessageAction("話し言葉", "話し言葉で！")
+                );
+                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+                this.reply(replyToken, templateMessage);
+                tempo++;
+                break;
+                }
+                case 5: {
+                    if (text.equals("丁寧語でいいよ")) {
+                        this.reply(replyToken, Arrays.asList(new TextMessage("わかりました..."),
+                     new TextMessage("丁寧語で話します")));
+                     tempo++;
+                     return;
+                    }
+                }*/
             }
         }
         switch (text) {
