@@ -92,6 +92,7 @@ public class KitchenSinkController {
     boolean first;
     int tempo;
     String name;
+    int wordtype;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -269,7 +270,20 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 tempo++;
                 break;
-                }   
+                }
+                case 2: {
+                    if (text.equals("そうだよ！")) {
+                        this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
+                     new TextMessage("いい名前ですね😍")));
+                     tempo++;
+                     return;
+                    }
+                    else {
+                        this.replyText("違うんだ...もう一回聞きます！");
+                        return;
+                        tempo--;
+                    }
+                }
             }
         }
         switch (text) {
