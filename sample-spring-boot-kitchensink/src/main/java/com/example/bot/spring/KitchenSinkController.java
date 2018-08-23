@@ -281,7 +281,7 @@ public class KitchenSinkController {
                         }
                         case "ちがう": {
                             this.replyText(replyToken, "違うんだ...もう一回教えてください！");
-                            tempo = tempo - 2 ;
+                            tempo = tempo - 2;
                             return;
                         }
                         default : {
@@ -344,7 +344,7 @@ public class KitchenSinkController {
                 }
                 case 7: {
                     this.replyText(replyToken, "これからたくさんお話ししようね！");
-                    callcount = 0 ;
+                    callcount = 0;
                     return;
                 }
             }
