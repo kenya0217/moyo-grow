@@ -279,7 +279,7 @@ public class KitchenSinkController {
                      return;
                     }
                     else {
-                        this.replyText("違うんだ...もう一回聞きます！");
+                        this.replyText(replyToken, "違うんだ...もう一回聞きます！");
                         return;
                         tempo--;
                     }
