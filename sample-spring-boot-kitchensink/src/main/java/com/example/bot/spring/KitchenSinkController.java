@@ -323,7 +323,7 @@ public class KitchenSinkController {
                             wordtype = 1;
                             return;
                         }
-                        default :{
+                        default : {
                             this.replyText(replyToken, "ちゃんとボタンを押して！");
                             tempo--;
                             return;
