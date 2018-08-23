@@ -249,15 +249,15 @@ public class KitchenSinkController {
             throws Exception {
         String text = content.getText();
         callcount++;
-        log.info("Got from {}: {}", replyToken, text);
+        log.info("G", replyToken, text);
         if (!first) {
             switch (tempo) {
                 case 0: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです")));
+                    this.reply(replyToken, Arrays.asList(new TextMessage("初めまして"), new TextMessage("あなたの名前が聞きたいです")));
                     tempo++;
                     return;
                 }
-               /* case 1: {
+                /*case 1: {
                     name = text;
                     ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "あなたの名前は"+name+"ですか？",
@@ -266,11 +266,19 @@ public class KitchenSinkController {
                 );
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                 if (TemplateMessage.equals(Yes)) {
-                    this.replyText(replyToken, "あなたの名前は"+name+"ですね！！");
+                    this.replyText(replyToken, "あなたの名前は" + name + "ですね！！");
+                    tempo++;
                     return;
                 }
-                this.reply(replyToken, templateMessage);
-                break;
+                else {
+                    this.replyText(replyToken, "違うんだ..ならもう一回聞く！");
+                    return;
+                }
+                }
+                case 2: {
+                    this.replyText(replyToken, "ねぇねぇ、" + name + "さん！");
+                    tempo++;
+                    return;
                 }*/
             }
         }
