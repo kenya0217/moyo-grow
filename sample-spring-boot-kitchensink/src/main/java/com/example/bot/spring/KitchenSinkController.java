@@ -264,7 +264,7 @@ public class KitchenSinkController {
                     ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "あなたの名前は" + name + "ですか？",
                         new MessageAction("はい", "そうだよ"),
-                        new MessageAction("いいえ", "違う")
+                        new MessageAction("いいえ", "ちがう")
                 );
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
                 this.reply(replyToken, templateMessage);
@@ -277,8 +277,9 @@ public class KitchenSinkController {
                             this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
                             new TextMessage("いい名前ですね😍")));
                             tempo++;
+                            return;
                         }
-                        case "違う": {
+                        case "ちがう": {
                             this.replyText(replyToken, "違うんだ...もう一回聞きます！");
                             tempo--;
                             return;
