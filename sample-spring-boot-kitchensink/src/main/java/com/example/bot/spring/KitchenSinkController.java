@@ -91,6 +91,7 @@ public class KitchenSinkController {
     String callcountstring;
     boolean first;
     int tempo;
+    String name;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -252,20 +253,25 @@ public class KitchenSinkController {
         if (!first) {
             switch (tempo) {
                 case 0: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです"+0x100078)));
+                    this.reply(replyToken, Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです" + 0x100078)));
                     tempo++;
                     return;
                 }
-                case 1: {
+               /* case 1: {
+                    name = text;
                     ConfirmTemplate confirmTemplate = new ConfirmTemplate(
-                        "Do it?",
-                        new MessageAction("Yes", "Yes!"),
-                        new MessageAction("No", "No!")
+                        "あなたの名前は"+name+"ですか？",
+                        new MessageAction("そうだよ！", "Yes"),
+                        new MessageAction("違うわ", "No")
                 );
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+                if (TemplateMessage.equals(Yes)) {
+                    this.replyText(replyToken, "あなたの名前は"+name+"ですね！！");
+                    return;
+                }
                 this.reply(replyToken, templateMessage);
                 break;
-                }
+                }*/
             }
         }
         switch (text) {
