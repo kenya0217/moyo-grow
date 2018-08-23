@@ -297,13 +297,13 @@ public class KitchenSinkController {
                         }
                     }
                 }
-                /*case 3: {
+                case 3: {
                     this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
                      new TextMessage("一つ質問させてもらいます")));
                     tempo++;
                     return;
                 }
-                case 4: {
+                /*case 4: {
                     ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "これからは丁寧語と話し言葉どっちで会話すればいいですか？",
                         new MessageAction("丁寧語", "丁寧語でいいよ"),
@@ -315,6 +315,20 @@ public class KitchenSinkController {
                 break;
                 }
                 case 5: {
+                    switch (text) {
+                        case "丁寧語でいいよ": {
+                            this.reply(replyToken, Arrays.asList(new TextMessage("わかりました..."),
+                            new TextMessage("丁寧語で会話しますね😢")));
+                            tempo++;
+                            return;
+                        }
+                        case "話し言葉で！": {
+
+                        }
+                        default :{
+
+                        }
+                    }
                 }*/
             }
         }
