@@ -250,9 +250,11 @@ public class KitchenSinkController {
         callcount++;
         log.info("Got text message from {}: {}", replyToken, text);
         if (!first) {
-            this.replyText(replyToken, "a");
-            first = true;
-            return;
+            switch (tempo) {
+                case 0: {
+                    this.reply(replyToken,　Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです😄")));
+                }
+            }
         }
         switch (text) {
             case "profile": {
