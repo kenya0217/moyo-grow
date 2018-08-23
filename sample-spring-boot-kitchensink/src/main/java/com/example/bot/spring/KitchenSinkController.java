@@ -262,27 +262,21 @@ public class KitchenSinkController {
                     name = text;
                     ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "あなたの名前は"+name+"ですか？",
-                        new MessageAction("そうだよ！", "Yes"),
-                        new MessageAction("違うわ", "No")
+                        new MessageAction("はい", "そうだよ！"),
+                        new MessageAction("いいえ", "違う")
                 );
                 TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
-                if (TemplateMessage.equals("Yes")) {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("あなたの名前は" + name + "ですね!"),
-                     new TextMessage("いい名前だね" + 0x100078)));
+                this.reply(replyToken, templateMessage);
+                tempo++;
+                break;
+                }
+                /*case 3: {
+                    this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
+                     new TextMessage("一つ質問させてもらいます")));
                     tempo++;
                     return;
-                }
-                else {
-                    this.replyText(replyToken, "違うんだ..ならもう一回聞く！");
-                    tempo--;
-                    return;
-                }
-                }
-                case 2: {
-                    this.replyText(replyToken, "ねぇねぇ、" + name + "さん！");
-                    tempo++;
-                    return;
-                }
+                }*/
+                
             }
         }
         switch (text) {
