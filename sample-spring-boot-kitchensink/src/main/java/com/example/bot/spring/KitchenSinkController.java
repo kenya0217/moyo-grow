@@ -280,8 +280,8 @@ public class KitchenSinkController {
                     }
                     else {
                         this.replyText(replyToken, "違うんだ...もう一回聞きます！");
-                        return;
                         tempo--;
+                        return;
                     }
                 }
             }
