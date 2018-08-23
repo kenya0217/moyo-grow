@@ -89,7 +89,7 @@ import lombok.extern.slf4j.Slf4j;
 public class KitchenSinkController {
     int callcount;
     String callcountstring;
-    boolean first = false;
+    boolean first;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -248,6 +248,9 @@ public class KitchenSinkController {
         String text = content.getText();
         callcount++;
         log.info("Got text message from {}: {}", replyToken, text);
+        if(first){
+
+        
         switch (text) {
             case "profile": {
                 String userId = event.getSource().getUserId();
@@ -444,6 +447,12 @@ public class KitchenSinkController {
                         text
                 );
                 break;
+        }
+        }
+        else{
+
+
+
         }
     }
 
