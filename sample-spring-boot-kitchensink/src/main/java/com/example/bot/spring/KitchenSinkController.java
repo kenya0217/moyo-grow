@@ -261,7 +261,7 @@ public class KitchenSinkController {
                 case 1: {
                     name = text;
                     ConfirmTemplate confirmTemplate = new ConfirmTemplate(
-                        "あなたの名前は"+name+"ですか？",
+                        "あなたの名前は" + name + "ですか？",
                         new MessageAction("はい", "そうだよ！"),
                         new MessageAction("いいえ", "違う")
                 );
@@ -270,13 +270,25 @@ public class KitchenSinkController {
                 tempo++;
                 break;
                 }
-                /*case 3: {
+                /*case 2: {
+                    if (text.equals("そうだよ！")) {
+                        this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
+                     new TextMessage("いい名前ですね😍")));
+                     tempo++;
+                     return;
+                    }
+                    else {
+                        this.replyText("違うんだ...もう一回聞きます！");
+                        return;
+                        tempo--;
+                    }
+                }
+                case 3: {
                     this.reply(replyToken, Arrays.asList(new TextMessage(name + "さん！"),
                      new TextMessage("一つ質問させてもらいます")));
                     tempo++;
                     return;
-                }*/
-                
+                }*/     
             }
         }
         switch (text) {
