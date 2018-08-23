@@ -450,7 +450,6 @@ public class KitchenSinkController {
                 );
                 break;
          }
-        
     }
 
     private static String createUri(String path) {
