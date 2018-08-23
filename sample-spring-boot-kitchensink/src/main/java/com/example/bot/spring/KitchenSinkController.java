@@ -254,7 +254,7 @@ public class KitchenSinkController {
         if (!first) {
             switch (tempo) {
                 case 0: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("初めまして!"),
+                    this.reply(replyToken, Arrays.asList(new TextMessage("初めまして!私は無知の生命体 moyo !"),
                      new TextMessage("あなたの名前が聞きたいです😊")));
                     tempo++;
                     return;
@@ -342,7 +342,7 @@ public class KitchenSinkController {
                     }
                 }
                 case 7: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！"),StickerMessage(1,1));
+                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！"),StickerMessage(getPackageId(1),getStickerId(1)));
                     return;
                 }
             }
