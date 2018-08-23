@@ -90,6 +90,7 @@ public class KitchenSinkController {
     int callcount;
     String callcountstring;
     boolean first;
+    int tempo;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -248,7 +249,10 @@ public class KitchenSinkController {
         String text = content.getText();
         callcount++;
         log.info("Got text message from {}: {}", replyToken, text);
-        if (first) {
+        if (!first) {
+            this.replyText(replyToken, "a");
+            return;
+        }
         switch (text) {
             case "profile": {
                 String userId = event.getSource().getUserId();
@@ -445,13 +449,8 @@ public class KitchenSinkController {
                         text
                 );
                 break;
-        }
-        }
-        else {
-
-
-
-        }
+         }
+        
     }
 
     private static String createUri(String path) {
