@@ -318,7 +318,7 @@ public class KitchenSinkController {
                         }
                         case "話し言葉で！": {
                             this.reply(replyToken, Arrays.asList(new TextMessage("え、いいの！"),
-                            new TextMessage("moyo嬉しい" + 0x100078),new TextMessage("やっぱ、話し言葉の方がよき😘")));
+                            new TextMessage("moyo嬉しい"),new TextMessage("やっぱ、話し言葉の方がよき😘")));
                             tempo = tempo + 2;
                             wordtype = 1;
                             return;
@@ -342,7 +342,7 @@ public class KitchenSinkController {
                     }
                 }
                 case 7: {
-                    this.replyText("これからたくさんお話ししようね！");
+                    this.replyText(replyToken, "これからたくさんお話ししようね！");
                     callcount = 0 ;
                     return;
                 }
