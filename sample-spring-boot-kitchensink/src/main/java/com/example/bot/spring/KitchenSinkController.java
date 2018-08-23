@@ -252,12 +252,19 @@ public class KitchenSinkController {
         if (!first) {
             switch (tempo) {
                 case 0: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです😄")));
+                    this.reply(replyToken, Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです"+0x100078)));
                     tempo++;
                     return;
                 }
                 case 1: {
-
+                    ConfirmTemplate confirmTemplate = new ConfirmTemplate(
+                        "Do it?",
+                        new MessageAction("Yes", "Yes!"),
+                        new MessageAction("No", "No!")
+                );
+                TemplateMessage templateMessage = new TemplateMessage("Confirm alt text", confirmTemplate);
+                this.reply(replyToken, templateMessage);
+                break;
                 }
             }
         }
