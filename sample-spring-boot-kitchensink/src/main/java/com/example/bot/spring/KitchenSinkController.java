@@ -253,8 +253,11 @@ public class KitchenSinkController {
             switch (tempo) {
                 case 0: {
                     this.reply(replyToken, Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです😄")));
-                    tempo++:
+                    tempo++;
                     return;
+                }
+                case 1: {
+
                 }
             }
         }
