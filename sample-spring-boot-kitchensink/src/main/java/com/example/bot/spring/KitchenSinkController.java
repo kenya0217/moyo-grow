@@ -342,7 +342,7 @@ public class KitchenSinkController {
                     }
                 }
                 case 7: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！"));
+                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！")));
                     callcount = 0 ;
                     return;
                 }
