@@ -19,6 +19,12 @@ line.bot:
   channel-secret: '55c68be001f5f3a9d0af5a5c5dddae16'
   handler.path: /callback
 
+
+spring.datasource.url=jdbc:mysql://129.154.82.44:3306/mydatabase
+spring.datasource.username=root
+spring.datasource.password=moyo1801017
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
 # To remove Client wire logs. Please comment out following lines.
 # See: https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html
 #

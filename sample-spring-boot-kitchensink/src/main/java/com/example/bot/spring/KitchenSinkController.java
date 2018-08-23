@@ -340,6 +340,7 @@ public class KitchenSinkController {
                             return;
                         }
                     }
+                    return;
                 }
                 case 7: {
                     this.replyText(replyToken, "これからたくさんお話ししようね！");
