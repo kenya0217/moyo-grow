@@ -330,17 +330,25 @@ public class KitchenSinkController {
                         }
                     }
                 }
-                /*case 6: {
+                case 6: {
                     if (wordtype == 0) {
-
+                        if (text.contains("話")) {
+                            this.reply(replyToken, Arrays.asList(new TextMessage("え、本当にいいの！"),
+                            new TextMessage("moyo嬉しい" + 0x100078)));
+                            tempo++;
+                            wordtype = 1;
+                            return;
+                        }
                     }
-                }*/
+                }
             }
         }
         switch (text) {
             case "reset": {
                 tempo = 0;
                 first = false;
+                this.replyText(replyToken, "リセットします");
+                return;
             }
             case "profile": {
                 String userId = event.getSource().getUserId();
