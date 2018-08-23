@@ -251,12 +251,6 @@ public class KitchenSinkController {
         String text = content.getText();
         callcount++;
         log.info("G", replyToken, text);
-        switch (text) {
-            case "reset" : {
-                tempo = 0;
-                first = false;
-            }
-        }
         if (!first) {
             switch (tempo) {
                 case 0: {
@@ -303,7 +297,7 @@ public class KitchenSinkController {
                     tempo++;
                     return;
                 }
-                /*case 4: {
+                case 4: {
                     ConfirmTemplate confirmTemplate = new ConfirmTemplate(
                         "これからは丁寧語と話し言葉どっちで会話すればいいですか？",
                         new MessageAction("丁寧語", "丁寧語でいいよ"),
@@ -323,11 +317,22 @@ public class KitchenSinkController {
                             return;
                         }
                         case "話し言葉で！": {
-
+                            this.reply(replyToken, Arrays.asList(new TextMessage("え、いいの！"),
+                            new TextMessage("moyo嬉しい" + 0x100078)));
+                            tempo++;
+                            wordtype = 1;
+                            return;
                         }
                         default :{
-
+                            this.replyText(replyToken, "ちゃんとボタンを押して！");
+                            tempo--;
+                            return;
                         }
+                    }
+                }
+                /*case 6: {
+                    if (wordtype == 0) {
+
                     }
                 }*/
             }
