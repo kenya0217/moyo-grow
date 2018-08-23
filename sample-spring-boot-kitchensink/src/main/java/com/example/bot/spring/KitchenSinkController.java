@@ -342,7 +342,7 @@ public class KitchenSinkController {
                     }
                 }
                 case 7: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！"),new StickerMessage(1,1)));
+                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！"),new handleSticker(1,1)));
                     return;
                 }
             }
