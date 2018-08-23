@@ -249,11 +249,11 @@ public class KitchenSinkController {
             throws Exception {
         String text = content.getText();
         callcount++;
-        log.info("Got text message from {}: {}", replyToken, text);
+        log.info("Got from {}: {}", replyToken, text);
         if (!first) {
             switch (tempo) {
                 case 0: {
-                    this.reply(replyToken, Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです" + 0x100078)));
+                    this.reply(replyToken, Arrays.asList(new TextMessage("初めての会話ありがとうございます〜！"), new TextMessage("あなたの名前が聞きたいです")));
                     tempo++;
                     return;
                 }
