@@ -318,8 +318,8 @@ public class KitchenSinkController {
                         }
                         case "話し言葉で！": {
                             this.reply(replyToken, Arrays.asList(new TextMessage("え、いいの！"),
-                            new TextMessage("moyo嬉しい" + 0x100078)));
-                            tempo++;
+                            new TextMessage("moyo嬉しい" + 0x100078),new TextMessage("やっぱ、話し言葉の方がよき😘")));
+                            tempo = tempo + 2;
                             wordtype = 1;
                             return;
                         }
@@ -334,12 +334,16 @@ public class KitchenSinkController {
                     if (wordtype == 0) {
                         if (text.contains("話")) {
                             this.reply(replyToken, Arrays.asList(new TextMessage("え、本当にいいの！"),
-                            new TextMessage("moyo嬉しい" + 0x100078)));
+                            new TextMessage("moyo嬉しい🤗")));
                             tempo++;
                             wordtype = 1;
                             return;
                         }
                     }
+                }
+                case 7: {
+                    this.reply(replyToken, Arrays.asList(new TextMessage("これからたくさんお話しようね！"),new StickerMessage(1,1)));
+                    return;
                 }
             }
         }
