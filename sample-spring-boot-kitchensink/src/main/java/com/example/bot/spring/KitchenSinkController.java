@@ -498,19 +498,19 @@ public class KitchenSinkController {
                 y++;
                 while (true) {
                     x = new java.util.Random().nextInt(5);
-                    if ( x == 0 && food == null) {
+                    if (x == 0 && food == null) {
                         break;
                     }
-                    if( x == 1 && plocal == null) {
+                    if (x == 1 && plocal == null) {
                         break;
                     }
-                    if( x == 2 && sports == null) {
+                    if (x == 2 && sports == null) {
                         break;
                     }
-                    if( x == 3 && likehuman == null) {
+                    if (x == 3 && likehuman == null) {
                         break;
                     }
-                    if( x == 4 && alpaca == null) {
+                    if (x == 4 && alpaca == null) {
                         break;
                     }
                 }
