@@ -101,6 +101,7 @@ public class KitchenSinkController {
     int x;
     boolean mode;
     int y;
+    int z;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
