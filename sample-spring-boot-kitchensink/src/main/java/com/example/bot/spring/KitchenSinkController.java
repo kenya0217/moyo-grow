@@ -93,10 +93,11 @@ public class KitchenSinkController {
     int tempo;
     String name;
     int wordtype;
-    String pname;
-    int page;
+    String food;
     String plocal;
-    int ptax;
+    String sports;
+    String likehuman;
+    String alpaca;
     int x;
     boolean mode;
     @Autowired
@@ -257,6 +258,44 @@ public class KitchenSinkController {
         String text = content.getText();
         callcount++;
         log.info("G", replyToken, text);
+        if(mode){
+            switch (x) {
+                case 0: {
+                    food = text;
+                    this.replyText(replyToken, text + "が好きやっちゃ！");
+                    mode = false;
+                    return;
+                }
+                case 1: {
+                    plocal = text;
+                    this.reply(replyToken, Arrays.asList(new TextMessage("いいところだよね" + text + "！"),
+                            new TextMessage("私も" + text + "で遊びたいっちゃ😆"));
+                    mode = false;
+                    return;
+                }
+                case 2: {
+                    sports = text;
+                    this.replyText(replyToken, text + ",楽しいもんね🙍");
+                    mode = false;
+                    return;
+                }
+                case 3: {
+                    likehuman = text;
+                    this.reply(replyToken, Arrays.asList(new TextMessage("え！！" + text + "が好きやとね！？"),
+                            new TextMessage("moyoいいと思う😍")));
+                    mode = false;
+                    return;
+                }
+                case 4: {
+                    alpaca = text;
+                    this.reply(replyToken, Arrays.asList(new TextMessage(name + "はアルパカそんなに好きやとね😂"),
+                            new TextMessage("moyoもアルパカ大好き😆"), 
+                            new TextMessage("アルパカは威嚇のために唾液を吐きかける習性があるんだよ😂")));
+                    mode = false;
+                    return;
+                }
+            }
+        }
         if (!first) {
             switch (tempo) {
                 case 0: {
@@ -423,6 +462,7 @@ public class KitchenSinkController {
                 this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉もっとたくさん会話しよー");
                 break;
             }
+            //moyomenu
             case "moyo": {
                 String imageUrl = createUri("/static/buttons/moyo.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
@@ -439,14 +479,32 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }
-            /*case "記憶モード": {
+            case "記憶モード": {
                 x = new java.util.Random().nextInt(5);
+                mode = true;
                 switch (x) {
                     case 0: {
-
+                        this.replyText(replyToken,"ねぇ、食べ物なんが好きやと🙄");
+                        return;
+                    }
+                    case 1: {
+                        this.replyText(replyToken,"ねぇねぇ、出身地はどこやと🙄");
+                        return;
+                    }
+                    case 2: {
+                        this.replyText(replyToken,"スポーツなんが好き？🤔");
+                        return;
+                    }
+                    case 3: {
+                        this.replyText(replyToken,"好きな人おると😍");
+                        return;
+                    }
+                    case 4: {
+                        this.replyText(replyToken,"アルパカのどういうとこが好き〜？？");
+                        return;
                     }
                 }
-            }*/
+            }
             case "carousel": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 CarouselTemplate carouselTemplate = new CarouselTemplate(
