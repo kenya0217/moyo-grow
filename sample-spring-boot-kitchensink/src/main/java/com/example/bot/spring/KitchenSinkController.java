@@ -404,6 +404,14 @@ public class KitchenSinkController {
             case "reset": {
                 tempo = 0;
                 first = false;
+                x = 0;
+                y = 0;
+                z = 0;
+                plocal = null;
+                food = null;
+                likehuman = null;
+                alpaca = null;
+                sports = null;
                 this.replyText(replyToken, "リセットします");
                 return;
             }
@@ -654,14 +662,14 @@ public class KitchenSinkController {
                 break;
             default:
                 log.info("Returns echo message {}: {}", replyToken, text);
-                z = new java.util.Random().nextInt(4);
+                z = new java.util.Random().nextInt(8);
                 switch (z) {
                     case 0: {
                         this.replyText(replyToken,"暇暇ひま〜〜〜😭");
                         return;
                     }
                     case 1: {
-                        if(food == null) {
+                        if (food == null) {
                         this.replyText(replyToken,"暇暇ひま〜〜〜😭");
                         return;
                         }
@@ -669,7 +677,7 @@ public class KitchenSinkController {
                         return;
                     }
                     case 2: {
-                        if(plocal == null) {
+                        if (plocal == null) {
                         this.replyText(replyToken,"暇暇ひま〜〜〜😭");
                         return;
                         }
@@ -677,20 +685,36 @@ public class KitchenSinkController {
                         return;
                     }
                     case 3: {
-                        if(food == null) {
+                        if (likehuman == null) {
                         this.replyText(replyToken,"暇暇ひま〜〜〜😭");
                         return;
                         }
-                        this.replyText(replyToken, likehuman + "あ");
+                        this.replyText(replyToken, likehuman + "にmoyoもあって見たーい！");
                         return;
                     }
                     case 4: {
-                        if(food == null) {
-                        this.replyText(replyToken,"暇暇ひま〜〜〜😭");
+                        if (sports == null) {
+                        this.replyText(replyToken,"お腹すいた〜😕");
                         return;
                         }
-                        this.replyText(replyToken, food + "食べたーい😻");
+                        this.replyText(replyToken, sports + "一緒にしよ！");
                         return;
+                    }
+                    case 5: {
+                        if (alpaca == null) {
+                        this.replyText(replyToken,"お腹すいた〜😕");
+                        return;
+                        }
+                        this.replyText(replyToken, alpaca + "：ってアルパカのいいところらしいです😛");
+                        return;
+                    }
+                    case 6: {
+                        this.replyText(replyToken,"お腹すいた〜😕");
+                        return;
+                    }
+                    case 7: {
+                        this.replyText(replyToken,"笑笑笑");
+                        return;   
                     }
                 }
                 break;
