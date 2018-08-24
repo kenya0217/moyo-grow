@@ -414,8 +414,7 @@ public class KitchenSinkController {
             }
             //moyoと話した回数をいう
             case "count": {
-                this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉
-                もっとたくさん会話しよー");
+                this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉もっとたくさん会話しよー");
                 break;
             }
             case "buttons": {
