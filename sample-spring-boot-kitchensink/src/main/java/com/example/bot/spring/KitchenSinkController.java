@@ -100,6 +100,7 @@ public class KitchenSinkController {
     String alpaca;
     int x;
     boolean mode;
+    int y;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -480,9 +481,11 @@ public class KitchenSinkController {
                 break;
             }
             case "質問": {
+                y++;
                 x = new java.util.Random().nextInt(5);
                 mode = true;
-                switch (x) {
+                if (y<3) {
+                    switch (x) {
                     case 0: {
                         this.replyText(replyToken,"ねぇ、食べ物なんが好きやと🙄");
                         return;
@@ -504,6 +507,9 @@ public class KitchenSinkController {
                         return;
                     }
                 }
+                }
+                this.replyText(replyToken,"moyoもう質問する気な〜い👩");
+                return;
             }
             case "carousel": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
