@@ -717,6 +717,7 @@ public class KitchenSinkController {
                         return;   
                     }
                 }
+                this.replyText(replyToken,text);
                 break;
          }
     }
