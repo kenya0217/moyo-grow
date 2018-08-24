@@ -31,7 +31,8 @@ import java.util.function.Consumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 import com.google.common.io.ByteStreams;
 
@@ -167,9 +168,9 @@ public class KitchenSinkController {
                 });
     }
 
-    @Scheduled(cron = "0 * * * * *", zone = "Asia/Tokyo")
-    public void doSomething(){
-        this.replyText(userId,"a");
+    @Scheduled(initialDelay=0, fixedDelay=10000)
+    public void execute(){
+        LineMessagingClient.pushMassage(new pushMassage(useid)
     }
 
     @EventMapping
@@ -260,8 +261,10 @@ public class KitchenSinkController {
         if (!first) {
             switch (tempo) {
                 case 0: {
+                    String useid;
                     this.reply(replyToken, Arrays.asList(new TextMessage("初めまして!私は無知の生命体 moyo !"),
                      new TextMessage("あなたの名前が聞きたいです😊")));
+                     useid = event.source.userid;
                     tempo++;
                     return;
                 }
