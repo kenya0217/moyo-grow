@@ -269,7 +269,7 @@ public class KitchenSinkController {
                 case 1: {
                     plocal = text;
                     this.reply(replyToken, Arrays.asList(new TextMessage("いいところだよね" + text + "！"),
-                            new TextMessage("私も" + text + "で遊びたいっちゃ😆"));
+                            new TextMessage("私も" + text + "で遊びたいっちゃ😆")));
                     mode = false;
                     return;
                 }
@@ -479,7 +479,7 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }
-            case "記憶モード": {
+            case "質問": {
                 x = new java.util.Random().nextInt(5);
                 mode = true;
                 switch (x) {
