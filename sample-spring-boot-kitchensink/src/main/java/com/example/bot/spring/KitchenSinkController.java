@@ -25,7 +25,6 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.HashMap;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
@@ -94,7 +93,6 @@ public class KitchenSinkController {
     int tempo;
     String name;
     int wordtype;
-    HashMap<String, String> hashmap = new HashMap<String, String>();
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -259,7 +257,6 @@ public class KitchenSinkController {
                     this.reply(replyToken, Arrays.asList(new TextMessage("初めまして!私は無知の生命体 moyo !"),
                      new TextMessage("あなたの名前が聞きたいです😊")));
                     tempo++;
-                    hashmap.put("aple","ringo");
                     return;
                 }
                 case 1: {
@@ -342,6 +339,7 @@ public class KitchenSinkController {
                             wordtype = 1;
                             return;
                         }
+                        this.replyText(replyToken,"🙃");
                         tempo++;
                     }
                     return;
@@ -414,8 +412,10 @@ public class KitchenSinkController {
                 }
                 break;
             }
+            //moyoと話した回数をいう
             case "count": {
-                this.replyText(replyToken,"s" + callcount);
+                this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉
+                もっとたくさん会話しよー");
                 break;
             }
             case "buttons": {
