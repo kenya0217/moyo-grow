@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -93,6 +94,7 @@ public class KitchenSinkController {
     int tempo;
     String name;
     int wordtype;
+    HashMap<String, String> hashmap = new HashMap<String, String>;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
