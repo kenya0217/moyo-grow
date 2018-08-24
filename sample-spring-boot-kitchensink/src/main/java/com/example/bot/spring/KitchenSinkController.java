@@ -103,8 +103,6 @@ public class KitchenSinkController {
         handleTextContent(event.getReplyToken(), event, message);
     }
     
-    @Sche
-
     @EventMapping
     public void handleStickerMessageEvent(MessageEvent<StickerMessageContent> event) {
         handleSticker(event.getReplyToken(), event.getMessage());
