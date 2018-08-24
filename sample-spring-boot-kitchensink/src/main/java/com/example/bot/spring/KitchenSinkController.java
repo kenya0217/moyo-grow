@@ -290,9 +290,10 @@ public class KitchenSinkController {
                 }
                 case 4: {
                     alpaca = text;
-                    this.reply(replyToken, Arrays.asList(new TextMessage(name + "はアルパカそんなに好きやとね😂"),
-                    new TextMessage("moyoもアルパカ大好き😆"), 
-                    new TextMessage("アルパカは威嚇のために唾液を吐きかける習性があるんだよ😂")));
+                    this.reply(replyToken,
+                    Arrays.asList(new TextMessage(text + "って思ってるんだ😂"),
+                    new TextMessage("moyoもアルパカ好き😆"),
+                    new TextMessage("アルパカって威嚇するために唾液を吐きかけるんだって😂😂😂")))
                     mode = false;
                     return;
                 }
