@@ -94,7 +94,7 @@ public class KitchenSinkController {
     int tempo;
     String name;
     int wordtype;
-    HashMap<String, String> hashmap = new HashMap<String, String>;
+    HashMap<String, String> hashmap = new HashMap<String, String>();
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
