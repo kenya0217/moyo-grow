@@ -93,6 +93,10 @@ public class KitchenSinkController {
     int tempo;
     String name;
     int wordtype;
+    String name;
+    int age;
+    String local;
+    int tax;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -417,22 +421,17 @@ public class KitchenSinkController {
                 this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉もっとたくさん会話しよー");
                 break;
             }
-            case "buttons": {
+            case "moyo": {
                 String imageUrl = createUri("/static/buttons/moyo.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
                         imageUrl,
                         "moyoメニュー",
                         "なんするー🤔",
                         Arrays.asList(
-                                new URIAction("Go to line.me",
-                                              "https://line.me"),
-                                new PostbackAction("Say hello1",
-                                                   "hello こんにちは"),
-                                new PostbackAction("言 hello2",
-                                                   "hello こんにちは",
-                                                   "hello こんにちは"),
                                 new MessageAction("Say message",
-                                                  "Rice=米")
+                                                  "Rice=米"),
+                                new MessageAction("a",
+                                "a")
                         ));
                 TemplateMessage templateMessage = new TemplateMessage("Button alt text", buttonsTemplate);
                 this.reply(replyToken, templateMessage);
