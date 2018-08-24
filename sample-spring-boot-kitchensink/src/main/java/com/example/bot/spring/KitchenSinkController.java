@@ -93,10 +93,12 @@ public class KitchenSinkController {
     int tempo;
     String name;
     int wordtype;
-    String name;
-    int age;
-    String local;
-    int tax;
+    String pname;
+    int page;
+    String plocal;
+    int ptax;
+    int x;
+    boolean mode;
     @Autowired
     private LineMessagingClient lineMessagingClient;
 
@@ -437,6 +439,14 @@ public class KitchenSinkController {
                 this.reply(replyToken, templateMessage);
                 break;
             }
+            /*case "記憶モード": {
+                x = new java.util.Random().nextInt(5);
+                switch (x) {
+                    case 0: {
+
+                    }
+                }
+            }*/
             case "carousel": {
                 String imageUrl = createUri("/static/buttons/1040.jpg");
                 CarouselTemplate carouselTemplate = new CarouselTemplate(
