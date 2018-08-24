@@ -466,11 +466,11 @@ public class KitchenSinkController {
                     this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉もっとたくさん会話しよー");
                     return;
                     }
-                else if (callcount < 50) {
+                if (callcount < 50) {
                     this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉仲良くなれたかな？？");
                     return;
                     }
-                else if (callcount < 100) {
+                if (callcount < 100) {
                     this.reply(replyToken, Arrays.asList(new TextMessage("moyoとの会話は" + callcount + "回目だよ😉"),
                     new TextMessage("たくさん会話してくれて嬉しい😍")));
                     return;
@@ -658,6 +658,38 @@ public class KitchenSinkController {
                 switch (z) {
                     case 0: {
                         this.replyText(replyToken,"暇暇ひま〜〜〜😭");
+                        return;
+                    }
+                    case 1: {
+                        if(food == null) {
+                        this.replyText(replyToken,"暇暇ひま〜〜〜😭");
+                        return;
+                        }
+                        this.replyText(replyToken, food + "食べたーい😻");
+                        return;
+                    }
+                    case 2: {
+                        if(plocal == null) {
+                        this.replyText(replyToken,"暇暇ひま〜〜〜😭");
+                        return;
+                        }
+                        this.replyText(replyToken, plocal + "！ww");
+                        return;
+                    }
+                    case 3: {
+                        if(food == null) {
+                        this.replyText(replyToken,"暇暇ひま〜〜〜😭");
+                        return;
+                        }
+                        this.replyText(replyToken, likehuman + "あ");
+                        return;
+                    }
+                    case 4: {
+                        if(food == null) {
+                        this.replyText(replyToken,"暇暇ひま〜〜〜😭");
+                        return;
+                        }
+                        this.replyText(replyToken, food + "食べたーい😻");
                         return;
                     }
                 }
