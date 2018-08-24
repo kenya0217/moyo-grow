@@ -293,7 +293,7 @@ public class KitchenSinkController {
                     this.reply(replyToken,
                     Arrays.asList(new TextMessage(text + "って思ってるんだ😂"),
                     new TextMessage("moyoもアルパカ好き😆"),
-                    new TextMessage("アルパカって威嚇するために唾液を吐きかけるんだって😂😂😂")))
+                    new TextMessage("アルパカって威嚇するために唾液を吐きかけるんだって😂😂😂")));
                     mode = false;
                     return;
                 }
