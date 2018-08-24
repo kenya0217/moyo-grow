@@ -345,6 +345,7 @@ public class KitchenSinkController {
                 case 7: {
                     this.replyText(replyToken, "これからたくさんお話ししようね！");
                     callcount = 0;
+                    tempo++;
                     return;
                 }
             }
