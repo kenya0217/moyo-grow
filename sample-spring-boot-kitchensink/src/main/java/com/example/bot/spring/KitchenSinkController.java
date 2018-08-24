@@ -259,7 +259,7 @@ public class KitchenSinkController {
         String text = content.getText();
         callcount++;
         log.info("G", replyToken, text);
-        if(mode){
+        if (mode) {
             switch (x) {
                 case 0: {
                     food = text;
@@ -290,8 +290,8 @@ public class KitchenSinkController {
                 case 4: {
                     alpaca = text;
                     this.reply(replyToken, Arrays.asList(new TextMessage(name + "はアルパカそんなに好きやとね😂"),
-                            new TextMessage("moyoもアルパカ大好き😆"), 
-                            new TextMessage("アルパカは威嚇のために唾液を吐きかける習性があるんだよ😂")));
+                    new TextMessage("moyoもアルパカ大好き😆"), 
+                    new TextMessage("アルパカは威嚇のために唾液を吐きかける習性があるんだよ😂")));
                     mode = false;
                     return;
                 }
@@ -484,7 +484,7 @@ public class KitchenSinkController {
                 y++;
                 x = new java.util.Random().nextInt(5);
                 mode = true;
-                if (y<3) {
+                if (y < 3) {
                     switch (x) {
                     case 0: {
                         this.replyText(replyToken,"ねぇ、食べ物なんが好きやと🙄");
