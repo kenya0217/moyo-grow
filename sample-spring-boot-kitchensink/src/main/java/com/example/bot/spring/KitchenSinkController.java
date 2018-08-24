@@ -170,7 +170,7 @@ public class KitchenSinkController {
 
     @Scheduled(initialDelay=0, fixedDelay=10000)
     public void execute(){
-        LineMessagingClient.pushMassage(new pushMassage(useid,new TemplateMessage("おは")).get();
+        LineMessagingClient.pushMassage(new pushMassage(useid,new TemplateMessage("おは"))).get();
         log.info("fsa",response);
     }
 
