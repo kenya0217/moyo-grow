@@ -259,6 +259,7 @@ public class KitchenSinkController {
                     this.reply(replyToken, Arrays.asList(new TextMessage("初めまして!私は無知の生命体 moyo !"),
                      new TextMessage("あなたの名前が聞きたいです😊")));
                     tempo++;
+                    hashmap.put("aple","ringo");
                     return;
                 }
                 case 1: {
