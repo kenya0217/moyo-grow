@@ -260,10 +260,8 @@ public class KitchenSinkController {
         if (!first) {
             switch (tempo) {
                 case 0: {
-                    String useid;
                     this.reply(replyToken, Arrays.asList(new TextMessage("初めまして!私は無知の生命体 moyo !"),
                      new TextMessage("あなたの名前が聞きたいです😊")));
-                     useid = event.source.userid;
                     tempo++;
                     return;
                 }
