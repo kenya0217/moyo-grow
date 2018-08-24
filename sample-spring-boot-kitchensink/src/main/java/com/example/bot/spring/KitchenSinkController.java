@@ -29,6 +29,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
 
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -102,6 +103,8 @@ public class KitchenSinkController {
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
     }
+
+    @
 
     @EventMapping
     public void handleStickerMessageEvent(MessageEvent<StickerMessageContent> event) {
