@@ -357,10 +357,6 @@ public class KitchenSinkController {
                 this.replyText(replyToken, "リセットします");
                 return;
             }
-            case "moyo": {
-                this.reply(replyToken,)
-                return;
-            }
              case "add": {
                 //一回のメッセージで2回返答する
                 this.reply(replyToken, Arrays.asList(new TextMessage("a"), new TextMessage("i")));
