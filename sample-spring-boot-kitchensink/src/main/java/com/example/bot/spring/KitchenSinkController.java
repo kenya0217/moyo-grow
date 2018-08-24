@@ -484,9 +484,26 @@ public class KitchenSinkController {
             }
             case "質問": {
                 y++;
-                x = new java.util.Random().nextInt(5);
+                while (true) {
+                    x = new java.util.Random().nextInt(5);
+                    if( x == 0 && food ==null){
+                        break;
+                    }
+                    if( x == 1 && plocal ==null){
+                        break;
+                    }
+                    if( x == 2 && sports ==null){
+                        break;
+                    }
+                    if( x == 3 && likehuman ==null){
+                        break;
+                    }
+                    if( x == 4 && alpaca ==null){
+                        break;
+                    }
+                }
                 mode = true;
-                if (y < 3) {
+                if (y < 4) {
                     switch (x) {
                     case 0: {
                         this.replyText(replyToken,"ねぇ、食べ物なんが好きやと🙄");
@@ -625,10 +642,13 @@ public class KitchenSinkController {
                 break;
             default:
                 log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(
-                        replyToken,
-                        text
-                );
+                z = new java.util.Random().nextInt(4);
+                switch (z) {
+                    case 0: {
+                        this.replyText(replyToken,"暇暇ひま〜〜〜😭");
+                        return;
+                    }
+                }
                 break;
          }
     }
