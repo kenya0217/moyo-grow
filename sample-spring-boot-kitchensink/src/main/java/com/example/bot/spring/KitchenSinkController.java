@@ -339,6 +339,7 @@ public class KitchenSinkController {
                             wordtype = 1;
                             return;
                         }
+                        tempo++;
                     }
                     return;
                 }
