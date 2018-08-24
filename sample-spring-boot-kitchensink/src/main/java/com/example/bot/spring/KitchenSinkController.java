@@ -31,8 +31,6 @@ import java.util.function.Consumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import com.google.common.io.ByteStreams;
 
@@ -166,10 +164,6 @@ public class KitchenSinkController {
                     reply(event.getReplyToken(),
                           new VideoMessage(mp4.getUri(), previewImg.uri));
                 });
-    }
-
-    @Scheduled(initialDelay=0, fixedDelay=10000)
-    public void execute(){
     }
 
     @EventMapping
