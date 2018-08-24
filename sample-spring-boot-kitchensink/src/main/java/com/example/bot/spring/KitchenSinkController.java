@@ -462,7 +462,19 @@ public class KitchenSinkController {
             }
             //moyoと話した回数をいう
             case "count": {
-                this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉もっとたくさん会話しよー");
+                if (callcount < 10) {
+                    this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉もっとたくさん会話しよー");
+                    return;
+                }
+                else if (callcount < 50) {
+                    this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉仲良くなれたかな？？");
+                    return;
+                }
+                else if (callcount < 100) {
+                    this.reply(replyToken, Arrays.asList(new TextMessage("moyoとの会話は" + callcount + "回目だよ😉"),
+                    new TextMessage("たくさん会話してくれて嬉しい😍")));
+                    return;
+                }
                 break;
             }
             //moyomenu
@@ -473,10 +485,10 @@ public class KitchenSinkController {
                         "moyoメニュー",
                         "なんするー🤔",
                         Arrays.asList(
-                                new MessageAction("Say message",
-                                                  "Rice=米"),
-                                new MessageAction("a",
-                                "a")
+                                new MessageAction("質問していいよ",
+                                                  "質問"),
+                                new MessageAction("話した回数",
+                                "count")
                         ));
                 TemplateMessage templateMessage = new TemplateMessage("Button alt text", buttonsTemplate);
                 this.reply(replyToken, templateMessage);
@@ -486,19 +498,19 @@ public class KitchenSinkController {
                 y++;
                 while (true) {
                     x = new java.util.Random().nextInt(5);
-                    if( x == 0 && food ==null){
+                    if ( x == 0 && food == null) {
                         break;
                     }
-                    if( x == 1 && plocal ==null){
+                    if ( x == 1 && plocal == null) {
                         break;
                     }
-                    if( x == 2 && sports ==null){
+                    if ( x == 2 && sports == null) {
                         break;
                     }
-                    if( x == 3 && likehuman ==null){
+                    if ( x == 3 && likehuman == null) {
                         break;
                     }
-                    if( x == 4 && alpaca ==null){
+                    if ( x == 4 && alpaca == null) {
                         break;
                     }
                 }
