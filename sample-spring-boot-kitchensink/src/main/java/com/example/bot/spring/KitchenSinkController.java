@@ -465,16 +465,16 @@ public class KitchenSinkController {
                 if (callcount < 10) {
                     this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉もっとたくさん会話しよー");
                     return;
-                }
+                    }
                 else if (callcount < 50) {
                     this.replyText(replyToken,"moyoとの会話は" + callcount + "回目だよ😉仲良くなれたかな？？");
                     return;
-                }
+                    }
                 else if (callcount < 100) {
                     this.reply(replyToken, Arrays.asList(new TextMessage("moyoとの会話は" + callcount + "回目だよ😉"),
                     new TextMessage("たくさん会話してくれて嬉しい😍")));
                     return;
-                }
+                    }
                 break;
             }
             //moyomenu
@@ -501,16 +501,16 @@ public class KitchenSinkController {
                     if ( x == 0 && food == null) {
                         break;
                     }
-                    if ( x == 1 && plocal == null) {
+                    if( x == 1 && plocal == null) {
                         break;
                     }
-                    if ( x == 2 && sports == null) {
+                    if( x == 2 && sports == null) {
                         break;
                     }
-                    if ( x == 3 && likehuman == null) {
+                    if( x == 3 && likehuman == null) {
                         break;
                     }
-                    if ( x == 4 && alpaca == null) {
+                    if( x == 4 && alpaca == null) {
                         break;
                     }
                 }
