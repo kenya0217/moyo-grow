@@ -538,7 +538,7 @@ public class KitchenSinkController {
                         return;
                     }
                     case 3: {
-                        this.replyText(replyToken,"好きな人おると😍");
+                        this.replyText(replyToken,"好きな人誰やと😍");
                         return;
                     }
                     case 4: {
