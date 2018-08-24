@@ -358,6 +358,7 @@ public class KitchenSinkController {
                 return;
             }
             case "moyo": {
+                this.reply(replyToken,)
                 return;
             }
              case "add": {
@@ -418,11 +419,11 @@ public class KitchenSinkController {
                 break;
             }
             case "buttons": {
-                String imageUrl = createUri("/static/buttons/1040.jpg");
+                String imageUrl = createUri("/static/buttons/moyo.jpg");
                 ButtonsTemplate buttonsTemplate = new ButtonsTemplate(
                         imageUrl,
-                        "My button sample",
-                        "Hello, my button",
+                        "moyoメニュー",
+                        "なんするー🤔",
                         Arrays.asList(
                                 new URIAction("Go to line.me",
                                               "https://line.me"),
