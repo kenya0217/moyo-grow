@@ -662,7 +662,7 @@ public class KitchenSinkController {
                 break;
             default:
                 log.info("Returns echo message {}: {}", replyToken, text);
-                z = new java.util.Random().nextInt(8);
+                z = new java.util.Random().nextInt(7);
                 switch (z) {
                     case 0: {
                         this.replyText(replyToken,"暇暇ひま〜〜〜😭");
@@ -711,10 +711,6 @@ public class KitchenSinkController {
                     case 6: {
                         this.replyText(replyToken,"お腹すいた〜😕");
                         return;
-                    }
-                    case 7: {
-                        this.replyText(replyToken,"笑笑笑");
-                        return;   
                     }
                 }
                 this.replyText(replyToken,text);
