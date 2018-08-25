@@ -687,7 +687,7 @@ public class KitchenSinkController {
                     }
                     case 3: {
                         if (likehuman == null) {
-                        this.replyText(replyToken,"暇暇ひま〜〜〜😭");
+                        this.replyText(replyToken,"最近アニメ見てないな~");
                         return;
                         }
                         this.replyText(replyToken, likehuman + "にmoyoもあって見たーい！");
@@ -703,7 +703,7 @@ public class KitchenSinkController {
                     }
                     case 5: {
                         if (alpaca == null) {
-                        this.replyText(replyToken,"お腹すいた〜😕");
+                        this.replyText(replyToken,"何言ってるの〜？");
                         return;
                         }
                         this.replyText(replyToken, alpaca + "：ってアルパカのいいところらしいです😛");
