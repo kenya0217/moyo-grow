@@ -548,6 +548,7 @@ public class KitchenSinkController {
                 }
                 }
                 this.replyText(replyToken,"moyoもう質問する気な〜い👩");
+                mode = false;
                 return;
             }
             case "carousel": {
